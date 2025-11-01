@@ -15,7 +15,7 @@ public class EmployeeController {
         return service.saveEmployee(employee);
     }
   
-    @PostMapping("/addEmployees")
+    @PostMapping("/addEmployee")
     public List<Employee> addEmployees(@RequestBody List<Employee> employees) {
         return service.saveEmployees(employees);
     }
