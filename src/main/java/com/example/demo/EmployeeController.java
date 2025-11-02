@@ -4,45 +4,46 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
+@CrossOrigin(origins = "http://127.0.0.1:5500")
 @RestController
+@RequestMapping("/api")
 public class EmployeeController {
-  
+
     @Autowired
     private EmployeeService service;
-  
-    @PostMapping("/addEmployee")
+
+    @PostMapping("/employee")
     public Employee addEmployee(@RequestBody Employee employee) {
         return service.saveEmployee(employee);
     }
-  
-    @PostMapping("/addEmployee")
+
+    @PostMapping("/employees")
     public List<Employee> addEmployees(@RequestBody List<Employee> employees) {
         return service.saveEmployees(employees);
     }
-  
-    @GetMapping("/Employees")
+
+    @GetMapping("/employees")
     public List<Employee> findAllEmployees() {
         return service.getEmployees();
     }
-  
-    @GetMapping("/EmployeeByEmpId/{id}")
-    public Employee findEmployeeByEmpId(@PathVariable int empId) {
+
+    @GetMapping("/employeeById/{empId}")
+    public Employee findEmployeeByEmpId(@PathVariable("empId") int empId) {
         return service.getEmployeeById(empId);
     }
-  
-      
-      @GetMapping("/Employee/{firstName}") 
-      public Employee findEmployeeByFirstName(@PathVariable String firstName) { return
-      service.getEmployeeByFirstName(firstName); }
-       
-  
-    @PutMapping("/update")
+
+    @GetMapping("/employeeByName/{firstName}")
+    public Employee findEmployeeByFirstName(@PathVariable("firstName") String firstName) {
+        return service.getEmployeeByFirstName(firstName);
+    }
+
+    @PutMapping("/employee")
     public Employee updateEmployee(@RequestBody Employee employee) {
         return service.updateEmployee(employee);
     }
-  
-    @DeleteMapping("/delete/{empid}")
-    public String deleteEmployee(@PathVariable int empId) {
+
+    @DeleteMapping("/employee/{empId}")
+    public String deleteEmployee(@PathVariable("empId") int empId) {
         return service.deleteEmployee(empId);
     }
 }

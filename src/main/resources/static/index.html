@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Employee Management System</h1>
+
+  <div class="form-container">
+    <h2>Add / Update Employee</h2>
+    <input type="number" id="empId" placeholder="Employee ID (for update only)">
+    <input type="text" id="firstName" placeholder="First Name">
+    <input type="text" id="lastName" placeholder="Last Name">
+    <input type="email" id="email" placeholder="Email">
+    <button onclick="addEmployee()">Add Employee</button>
+    <button onclick="updateEmployee()">Update Employee</button>
+  </div>
+
+  <hr>
+
+  <div class="list-container">
+    <h2>All Employees</h2>
+    <button onclick="getEmployees()">Refresh List</button>
+    <table id="employeeTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
