@@ -9,11 +9,15 @@ h1 {
   color: #333;
 }
 
-.form-container, .list-container {
+.form-container,
+.list-container,
+.payslip-container,
+.payslip-list-container {
   background: white;
   padding: 20px;
   margin: 20px auto;
   width: 80%;
+  max-width: 900px;
   border-radius: 10px;
   box-shadow: 0 0 10px #ccc;
 }
@@ -21,8 +25,12 @@ h1 {
 input {
   margin: 5px;
   padding: 10px;
-  width: 200px;
+  width: 180px; 
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
+
 
 button {
   padding: 10px 15px;
@@ -31,6 +39,7 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-left: 5px;
 }
 
 button:hover {
@@ -43,9 +52,11 @@ table {
   margin-top: 15px;
 }
 
-th, td {
+th,
+td {
   border: 1px solid #ccc;
   padding: 10px;
+  text-align: center;
 }
 
 th {
@@ -55,6 +66,7 @@ th {
 
 td button {
   background-color: #dc3545;
+  padding: 5px 10px;
 }
 
 td button:hover {

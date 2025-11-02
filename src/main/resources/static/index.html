@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Employee Management</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Employee & Payroll Management System</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <h1>Employee Management System</h1>
+  <h1>Employee & Payroll Management System</h1>
 
   <div class="form-container">
     <h2>Add / Update Employee</h2>
-    <input type="number" id="empId" placeholder="Employee ID (for update only)">
-    <input type="text" id="firstName" placeholder="First Name">
-    <input type="text" id="lastName" placeholder="Last Name">
-    <input type="email" id="email" placeholder="Email">
+    <input type="number" id="empId" placeholder="Employee ID (for update only)" />
+    <input type="text" id="firstName" placeholder="First Name" />
+    <input type="text" id="lastName" placeholder="Last Name" />
+    <input type="email" id="email" placeholder="Email" />
+    <input type="number" id="basicSalary" placeholder="Basic Salary" />
+    <input type="text" id="designation" placeholder="Designation" />
     <button onclick="addEmployee()">Add Employee</button>
     <button onclick="updateEmployee()">Update Employee</button>
   </div>
 
-  <hr>
 
+  <hr />
+
+  <!-- Employee List -->
   <div class="list-container">
     <h2>All Employees</h2>
     <button onclick="getEmployees()">Refresh List</button>
@@ -38,6 +44,42 @@
     </table>
   </div>
 
+  <hr />
+
+  <!-- Payslip Generation -->
+  <div class="payslip-container">
+    <h2>Generate Payslip</h2>
+    <input type="number" id="payslipEmpId" placeholder="Employee ID" />
+    <input type="text" id="payslipMonth" placeholder="Month (e.g., November)" />
+    <button onclick="generatePayslip()">Generate Payslip</button>
+  </div>
+
+  <hr />
+
+  <!-- Payslip List -->
+  <div class="payslip-list-container">
+    <h2>Payslips for Employee</h2>
+    <input type="number" id="listPayslipEmpId" placeholder="Employee ID" />
+    <button onclick="getPayslips()">Get Payslips</button>
+
+    <table id="payslipTable">
+      <thead>
+        <tr>
+          <th>Payslip ID</th>
+          <th>Month</th>
+          <th>Basic Salary</th>
+          <th>HRA</th>
+          <th>Allowances</th>
+          <th>Deductions</th>
+          <th>Net Salary</th>
+          <th>Generated Date</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
   <script src="script.js"></script>
 </body>
+
 </html>
